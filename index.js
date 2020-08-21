@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(bodyParser.json());
 app.use(cors())
-app.use(express.static(__dirname))
+// app.use(express.static(__dirname))
 
 
 
@@ -22,10 +22,11 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.get('/favicon.ico', (req, res) => res.status(204));
+// app.get('/favicon.ico', (req, res) => res.status(204));
 
 app.get('/', (req,res)=>{
-    res.redirect('./img/index.html');
+    res.send('okkkkkkkkkkkkk');
+    // res.redirect('./img/index.html');
 });
 
 const PORT = process.env.PORT || 8000;

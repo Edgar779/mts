@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const path = require('path');
+var fs = require('fs');
 
 var cors = require('cors')
 
@@ -24,8 +25,12 @@ app.use(function (req, res, next) {
 
 // app.get('/favicon.ico', (req, res) => res.status(204));
 
-app.get('/', (req,res)=>{
-    res.send('okkkkkkkkkkkkk');
+app.post('/sendRequest', (req,res)=>{
+    const bodyStr = JSON.stringify(req.body);
+   const read =  fs.readFileSync('index.json')
+   const write =  fs.appendFileSync('index.json', bodyStr + ",")
+
+    res.send(write);
     // res.redirect('./img/index.html');
 });
 

@@ -32,7 +32,7 @@ app.post('/sendRequest', (req,res)=>{
    const read =  fs.readFileSync('index.json')
    const write =  fs.appendFileSync('index.json', bodyStr + ",")
 
-    res.send(write);
+    res.send(read);
     // res.redirect('./img/index.html');
 });
 

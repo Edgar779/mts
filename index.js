@@ -21,6 +21,7 @@ app.use(function (req, res, next) {
     next();
 });
 
+app.get('/favicon.ico', (req, res) => res.status(204));
 
 app.get('/', (req,res)=>{
     res.send('ok');
